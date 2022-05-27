@@ -1,0 +1,33 @@
+export const theme = {
+    colors: {
+        black: '#1F2939',
+        muted: '#949BA6',
+        white: '#FFFFFF',
+        blackSqueeze: '#F0F7FA',
+        danger: '#FF4D4F',
+        primary: '#5243C2',
+        titanWhite: '#F5F5FF',
+        red500: '#FF4D4F',
+        red400: '#FF9293',
+        red300: '#FFC8C8',
+        red200: '#FFEDED',
+        indigo600: '#473AA6',
+        indigo500: '#5243C2',
+        gray200: '#D4D4D4',
+        gray100: '#F4F4F4',
+    },
+    fontSizes: {
+        xxl: '36px',
+        xl: '24px',
+        l: '20px',
+        m: '16px',
+        s: '14px',
+        xs: '12px',
+    },
+    media: {
+        desktop: '',
+        laptop: '',
+        tablet: '',
+        phone: '',
+    },
+};
