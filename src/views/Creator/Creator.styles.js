@@ -56,38 +56,40 @@ function template(i, r) {
     `;
 }
 
-function getIndexes() {
+function getIndexes(burger) {
+    console.log(burger);
     let str;
-    for (let i = 0, r = 10; i <= 10, r >= 1; i++, r--) {
+    for (let i = 0, r = burger + 2; i <= burger, r >= 0; i++, r--) {
         str += template(i, r);
     }
     return str;
 }
 
 export const BurgerItem = styled(motion.div)`
-    height: ${({ onion, salad, tomato, cucumber, mayo, cutlet, cheese, bun_bottom, bun_middle, bun_top }) =>
-        onion
+    height: ${({ ingredient }) =>
+        ingredient === 'onion'
             ? '5px'
-            : salad
+            : ingredient === 'salad'
             ? '20px'
-            : tomato
+            : ingredient === 'tomato'
             ? '30px'
-            : cucumber
+            : ingredient === 'cucumber'
             ? '25px'
-            : mayo
+            : ingredient === 'mayo'
             ? '20px'
-            : cheese
+            : ingredient === 'cheese'
             ? '10px'
-            : cutlet
+            : ingredient === 'cutlet'
             ? '45px'
-            : bun_bottom
+            : ingredient === 'bun_bottom'
             ? '50px'
-            : bun_middle
+            : ingredient === 'bun_middle'
             ? '40px'
-            : bun_top
+            : ingredient === 'bun_top'
             ? '120px'
             : null};
-    ${getIndexes()}
+    /* ${getIndexes()} */
+    ${({ burger }) => getIndexes(burger)}
 `;
 
 export const Img = styled.img``;

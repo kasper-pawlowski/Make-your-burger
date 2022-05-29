@@ -1,7 +1,7 @@
 import React from 'react';
-import { Wrapper, Img, Name, Qty, Button, Count } from './Ingredient.styles';
+import { Wrapper, Img, Name, Qty, Button, Count } from './IngredientListItem.js.styles';
 
-const Ingredient = ({ name, image }) => {
+const IngredientListItem = ({ name, image }) => {
     return (
         <Wrapper>
             <Img src={image} alt="" />
@@ -15,4 +15,4 @@ const Ingredient = ({ name, image }) => {
     );
 };
 
-export default Ingredient;
+export default IngredientListItem;

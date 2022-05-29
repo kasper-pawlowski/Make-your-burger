@@ -1,8 +1,11 @@
-import Ingredients from 'components/molecules/Ingredients/Ingredients';
+import React, { useState, useEffect } from 'react';
+import IngredientsList from 'components/molecules/IngredientsList/IngredientsList';
 import SummaryWrapper from 'components/molecules/SummaryWrapper/SummaryWrapper';
-import React from 'react';
 import { Blob, Burger, CreatorWrapper, H1, Wrapper, BurgerWrapper, Img, BurgerItem } from './Creator.styles';
 import { motion, AnimatePresence } from 'framer-motion';
+import { ingredients } from 'data/ingredientsData';
+import { useCtx } from 'context/Context';
+import { uid } from 'uid';
 
 import BunTop from 'assets/images/ingredientsLarge/bun_top.png';
 import BunMiddle from 'assets/images/ingredientsLarge/bun_middle.png';
@@ -16,6 +19,15 @@ import Onion from 'assets/images/ingredientsLarge/onion.png';
 import Salad from 'assets/images/ingredientsLarge/salad.png';
 
 const Creator = () => {
+    const [array, setArray] = useState([]);
+    const { burger } = useCtx();
+
+    useEffect(() => {
+        burger.forEach((burgerIngredient) => {
+            ingredients.filter((ingredient) => ingredient.name === burgerIngredient && setArray((oldArray) => [...oldArray, ingredient]));
+        });
+    }, [burger]);
+
     return (
         <Wrapper>
             <CreatorWrapper>
@@ -32,34 +44,15 @@ const Creator = () => {
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             transition={{ duration: 0.15 }}>
-                            <BurgerItem bun_top top layout>
+                            <BurgerItem ingredient="bun_top" layout burger={burger.length}>
                                 <Img src={BunTop} alt="" />
                             </BurgerItem>
-                            <BurgerItem tomato layout>
-                                <Img src={Tomato} alt="" />
-                            </BurgerItem>
-                            <BurgerItem cucumber layout>
-                                <Img src={Cucumber} alt="" />
-                            </BurgerItem>
-                            <BurgerItem onion layout>
-                                <Img src={Onion} alt="" />
-                            </BurgerItem>
-                            <BurgerItem bun_middle layout>
-                                <Img src={BunMiddle} alt="" />
-                            </BurgerItem>
-                            <BurgerItem salad layout>
-                                <Img src={Salad} alt="" />
-                            </BurgerItem>
-                            <BurgerItem cheese layout>
-                                <Img src={Cheese} alt="" />
-                            </BurgerItem>
-                            <BurgerItem cutlet layout>
-                                <Img src={Cutlet} alt="" />
-                            </BurgerItem>
-                            <BurgerItem mayo layout>
-                                <Img src={Mayo} alt="" />
-                            </BurgerItem>
-                            <BurgerItem bun_bottom layout>
+                            {array.map((e) => (
+                                <BurgerItem key={uid()} ingredient={e.name} layout burger={burger.length}>
+                                    <Img src={e.imageL} alt="" />
+                                </BurgerItem>
+                            ))}
+                            <BurgerItem ingredient="bun_bottom" layout burger={burger.length}>
                                 <Img src={BunBottom} alt="" />
                             </BurgerItem>
                         </Burger>
@@ -67,7 +60,7 @@ const Creator = () => {
                 </BurgerWrapper>
                 <SummaryWrapper />
             </CreatorWrapper>
-            <Ingredients />
+            <IngredientsList />
         </Wrapper>
     );
 };
