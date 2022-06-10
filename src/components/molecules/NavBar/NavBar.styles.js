@@ -5,6 +5,9 @@ export const Wrapper = styled.div`
     display: flex;
     align-items: center;
     gap: 80px;
+    @media (max-width: 1150px) {
+        gap: 30px;
+    }
 `;
 
 export const Logo = styled.div`
@@ -18,6 +21,10 @@ export const Logo = styled.div`
     align-items: center;
     font-size: ${({ theme }) => theme.fontSizes.xl};
     font-weight: 600;
+    @media (max-width: 1150px) {
+        width: 60px;
+        height: 60px;
+    }
 `;
 
 export const StyledLink = styled(NavLink)`
@@ -27,5 +34,10 @@ export const StyledLink = styled(NavLink)`
     padding: 10px 0;
     &.active {
         border-bottom: 2px solid ${({ theme }) => theme.colors.primary};
+    }
+    @media (max-width: 1150px) {
+        &:first-of-type {
+            margin-left: auto;
+        }
     }
 `;

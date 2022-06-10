@@ -28,7 +28,7 @@ export const Qty = styled.div`
     justify-content: space-between;
 `;
 
-export const Button = styled.button`
+export const DegreaseButton = styled.button`
     border: none;
     border-radius: 50%;
     display: flex;
@@ -36,7 +36,20 @@ export const Button = styled.button`
     align-items: center;
     height: 28px;
     width: 28px;
-    color: ${({ theme }) => theme.colors.primary};
+    color: ${({ theme, ingredientNumber }) => (ingredientNumber ? theme.colors.primary : theme.colors.muted)};
+    background-color: ${({ theme }) => theme.colors.titanWhite};
+    font-size: ${({ theme }) => theme.fontSizes.xl};
+`;
+
+export const IncreaseButton = styled.button`
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 28px;
+    width: 28px;
+    color: ${({ theme, ingredientNumber }) => (ingredientNumber === 3 ? theme.colors.muted : theme.colors.primary)};
     background-color: ${({ theme }) => theme.colors.titanWhite};
     font-size: ${({ theme }) => theme.fontSizes.xl};
 `;

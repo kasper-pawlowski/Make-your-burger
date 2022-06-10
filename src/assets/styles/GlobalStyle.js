@@ -23,4 +23,18 @@ export const GlobalStyle = createGlobalStyle`
   button {
     cursor: pointer;
   }
+  
+  ::-webkit-scrollbar {
+      width: 5px;         
+      height: 5px;             
+  }
+
+  ::-webkit-scrollbar-track {
+      background: ${({ theme }) => theme.colors.titanWhite};      
+  }
+  
+  ::-webkit-scrollbar-thumb {
+      background-color: ${({ theme }) => theme.colors.primary}; 
+      border-radius: 10px;      
+  }
 `;

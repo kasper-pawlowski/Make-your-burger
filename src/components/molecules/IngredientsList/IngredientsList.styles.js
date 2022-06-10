@@ -5,4 +5,8 @@ export const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     gap: 32px;
+    overflow: auto;
+    @media (max-width: 1150px) {
+        justify-content: start;
+    }
 `;

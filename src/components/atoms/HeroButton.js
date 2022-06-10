@@ -21,4 +21,13 @@ export const HeroButton = styled(Link)`
     &:hover {
         background-color: ${({ theme }) => theme.colors.indigo600};
     }
+
+    @media (max-width: 1150px) {
+        width: 120px;
+        height: 120px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-weight: 500;
+        font-size: 20px;
+    }
 `;

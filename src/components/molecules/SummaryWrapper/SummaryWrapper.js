@@ -1,31 +1,30 @@
-import React from 'react';
-import { ClockIcon, H3, Main, MainItem, Price, Wrapper, Total, WeightIcon, FireIcon } from './SummaryWrapper.styles';
+import React, { useEffect, useState } from 'react';
+import { H3, Price, Wrapper, Total } from './SummaryWrapper.styles';
 import { Button } from 'components/atoms/Button';
+import BurgerInfos from 'components/atoms/BurgerInfos/BurgerInfos';
+import { useMediaQuery } from 'react-responsive';
+import { useCtx } from 'context/Context';
 
 const SummaryWrapper = () => {
+    const { array } = useCtx();
+    const isMobile = useMediaQuery({ query: '(max-width: 1150px)' });
+    const [totalPrice, setTotalPrice] = useState();
+    const bunsPrice = 3.1;
+
+    useEffect(() => {
+        setTotalPrice(array?.reduce((accumulator, current) => accumulator + current.price, 0) + bunsPrice);
+    }, [array]);
+
     return (
         <Wrapper>
             <H3>Summary</H3>
             <Total>
-                <Price>$12.31</Price>
+                <Price>${totalPrice?.toFixed(2)}</Price>
                 <Button type="primary" size="extra">
                     Checkout
                 </Button>
             </Total>
-            <Main>
-                <MainItem>
-                    <ClockIcon />
-                    <p>7 min</p>
-                </MainItem>
-                <MainItem>
-                    <WeightIcon />
-                    <p>630 g</p>
-                </MainItem>
-                <MainItem>
-                    <FireIcon />
-                    <p>429 kcal</p>
-                </MainItem>
-            </Main>
+            {!isMobile && <BurgerInfos />}
         </Wrapper>
     );
 };

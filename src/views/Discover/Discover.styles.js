@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
     display: flex;
     flex: 1;
     align-items: center;
-    @media (max-width: 600px) {
+    @media (max-width: 850px) {
         flex-direction: column;
     }
 `;
@@ -16,6 +16,8 @@ export const H1 = styled.h1`
     font-size: clamp(40px, 10vw, 62px);
     line-height: clamp(50px, 10vw, 70px);
     flex: 1;
+    display: flex;
+    align-items: center;
 `;
 
 export const BurgerWrapper = styled.div`

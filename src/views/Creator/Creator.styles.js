@@ -13,6 +13,12 @@ export const CreatorWrapper = styled.div`
     width: 100%;
     display: flex;
     flex: 1;
+    height: auto;
+    @media (max-width: 1150px) {
+        flex-direction: column;
+        justify-content: start;
+        gap: 30px;
+    }
 `;
 
 export const H1 = styled.h1`
@@ -22,6 +28,9 @@ export const H1 = styled.h1`
     font-size: clamp(40px, 10vw, 62px);
     line-height: clamp(50px, 10vw, 70px);
     padding-right: 60px;
+    @media (max-width: 1500px) {
+        display: none;
+    }
 `;
 
 export const BurgerWrapper = styled.div`
@@ -30,6 +39,14 @@ export const BurgerWrapper = styled.div`
     justify-content: center;
     align-items: center;
     position: relative;
+    transition-duration: 0.15s;
+    transform: ${({ burger_length }) => burger_length > 10 && 'scale(0.7)'};
+    @media (max-width: 1366px) {
+        transform: ${({ burger_length }) => (burger_length > 10 ? 'scale(0.5)' : 'scale(0.6)')};
+    }
+    @media (max-width: 1150px) {
+        transform: ${({ burger_length }) => (burger_length > 10 ? 'scale(0.4)' : 'scale(0.6)')};
+    }
 `;
 
 export const Blob = styled(Vector)`
@@ -39,6 +56,9 @@ export const Blob = styled(Vector)`
 `;
 
 export const Burger = styled.div`
+    width: 100%;
+    height: 100%;
+    position: absolute;
     z-index: 1;
     flex: 1;
     height: 100%;
@@ -56,10 +76,9 @@ function template(i, r) {
     `;
 }
 
-function getIndexes(burger) {
-    console.log(burger);
+function getIndexes(burger_length) {
     let str;
-    for (let i = 0, r = burger + 2; i <= burger, r >= 0; i++, r--) {
+    for (let i = 0, r = burger_length + 2; i <= burger_length, r >= 0; i++, r--) {
         str += template(i, r);
     }
     return str;
@@ -74,7 +93,7 @@ export const BurgerItem = styled(motion.div)`
             : ingredient === 'tomato'
             ? '30px'
             : ingredient === 'cucumber'
-            ? '25px'
+            ? '20px'
             : ingredient === 'mayo'
             ? '20px'
             : ingredient === 'cheese'
@@ -83,13 +102,18 @@ export const BurgerItem = styled(motion.div)`
             ? '45px'
             : ingredient === 'bun_bottom'
             ? '50px'
-            : ingredient === 'bun_middle'
+            : ingredient === 'bun'
             ? '40px'
             : ingredient === 'bun_top'
-            ? '120px'
+            ? '110px'
             : null};
-    /* ${getIndexes()} */
-    ${({ burger }) => getIndexes(burger)}
+    ${({ burger_length }) => getIndexes(burger_length)}
 `;
 
-export const Img = styled.img``;
+export const Img = styled.img`
+    @media (max-width: 1150px) {
+        /* flex: auto; */
+        /* transform: scale(0.6); */
+        width: 100%;
+    }
+`;

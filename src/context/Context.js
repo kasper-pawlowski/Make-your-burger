@@ -7,8 +7,10 @@ export function useCtx() {
 }
 
 export function CtxProvider({ children }) {
-    const [burger, setBurger] = useState(['tomato', 'cucumber', 'onion', 'salad']);
-    const value = { burger, setBurger };
+    const [burger, setBurger] = useState(['mayo', 'salad', 'cutlet', 'cheese', 'tomato', 'cucumber']);
+    const [array, setArray] = useState();
+
+    const value = { burger, setBurger, array, setArray };
 
     return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
 }
