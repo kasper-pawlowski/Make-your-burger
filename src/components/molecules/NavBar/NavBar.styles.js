@@ -21,7 +21,7 @@ export const Logo = styled.div`
     align-items: center;
     font-size: ${({ theme }) => theme.fontSizes.xl};
     font-weight: 600;
-    @media (max-width: 1150px) {
+    @media (max-width: 1366px) {
         width: 60px;
         height: 60px;
     }

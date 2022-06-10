@@ -5,8 +5,8 @@ const NavBar = () => {
     return (
         <Wrapper>
             <Logo>🍔</Logo>
-            <StyledLink to="/">Discover</StyledLink>
-            <StyledLink to="/make-your-burger">Make Your Burger</StyledLink>
+            <StyledLink to="/make-your-burger/">Discover</StyledLink>
+            <StyledLink to="/make-your-burger/creator">Make Your Burger</StyledLink>
         </Wrapper>
     );
 };

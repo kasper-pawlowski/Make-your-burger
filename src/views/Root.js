@@ -2,7 +2,7 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from 'assets/styles/GlobalStyle';
 import { theme } from 'assets/styles/theme';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Wrapper } from 'views/Root.styles';
 import { CtxProvider } from 'context/Context';
 import NavBar from 'components/molecules/NavBar/NavBar';
@@ -18,8 +18,9 @@ const Root = () => {
                     <Wrapper>
                         <NavBar />
                         <Routes>
-                            <Route path="/" element={<Discover />} />
-                            <Route path="/make-your-burger" element={<Creator />} />
+                            <Route path="/" element={<Navigate to="/make-your-burger/" replace />} />
+                            <Route path="/make-your-burger/" element={<Discover />} />
+                            <Route path="/make-your-burger/creator" element={<Creator />} />
                             <Route path="*" element={<p>404</p>} />
                         </Routes>
                     </Wrapper>

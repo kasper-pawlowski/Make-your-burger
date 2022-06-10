@@ -11,7 +11,7 @@ const Discover = () => {
             </H1>
             <BurgerWrapper>
                 <img src={Image} alt="" />
-                <HeroButton to="make-your-burger">
+                <HeroButton to="/make-your-burger/creator">
                     MAKE <br /> BURGER
                 </HeroButton>
             </BurgerWrapper>
