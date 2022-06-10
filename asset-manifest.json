@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.js": "/make-your-burger/static/js/main.e8e07f8d.js",
+    "static/media/burger.svg": "/make-your-burger/static/media/burger.88490c2688a7f881a5ae2b5b3f388215.svg",
+    "static/media/main-img.png": "/make-your-burger/static/media/main-img.88d9d94c5a820772e5e8.png",
+    "static/media/bun_top.png": "/make-your-burger/static/media/bun_top.454f48e143ac327ac68e.png",
+    "static/media/cutlet.png": "/make-your-burger/static/media/cutlet.a25e8f98eca39fe5aa8d.png",
+    "static/media/salad.png": "/make-your-burger/static/media/salad.b66d5c94ded30562ee62.png",
+    "static/media/bun_bottom.png": "/make-your-burger/static/media/bun_bottom.901a18b25c181b75acd1.png",
+    "static/media/bun_middle.png": "/make-your-burger/static/media/bun_middle.18d72cf6ee6b790d606a.png",
+    "static/media/mayo.png": "/make-your-burger/static/media/mayo.a7edeecaacb883ba9571.png",
+    "static/media/tomato.png": "/make-your-burger/static/media/tomato.07f3ccea3ec25bf64a9a.png",
+    "static/media/cheese.png": "/make-your-burger/static/media/cheese.98209fedb6a99bda3c75.png",
+    "static/media/cucumber.png": "/make-your-burger/static/media/cucumber.6b63847ccdfe8d44616f.png",
+    "static/media/onion.png": "/make-your-burger/static/media/onion.b1cf4779bdb858550d5a.png",
+    "static/media/weight.svg": "/make-your-burger/static/media/weight.16e1a1c1773e857f2f9c6f593a4ee0fd.svg",
+    "index.html": "/make-your-burger/index.html",
+    "static/media/fire.svg": "/make-your-burger/static/media/fire.8a2f776fc455073846bfe2678d8af923.svg",
+    "static/media/clock.svg": "/make-your-burger/static/media/clock.fddaa64bb4aa892907c67c88d82cfd95.svg",
+    "static/media/Vector.svg": "/make-your-burger/static/media/Vector.db8b845f0d307c9678e56e36a573988b.svg",
+    "main.e8e07f8d.js.map": "/make-your-burger/static/js/main.e8e07f8d.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.e8e07f8d.js"
+  ]
+}
